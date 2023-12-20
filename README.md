@@ -141,5 +141,22 @@ deleteEvent
 ###### ResponseBody
 
  ```shell
-204No Content
+204 No Content
 ```
+## Contributors ✨
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/srija-shenkeshi"><img src="https://avatars.githubusercontent.com/u/98575238?s=400&u=3997d67f470a632951b9dfbbac34301e991e6539&v=4" width="100px;" alt=""/><br /><sub><b>SrijaShenkeshi</b></sub></a><br /></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+    That's all folks! 
