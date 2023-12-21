@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'jacoco'
 }
 
 group = 'com.modeeleven'
@@ -27,3 +28,50 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+ext {
+	jacocoExcludes = [
+			'**/com/calendar/**/model/**'
+	]
+}
+
+jacocoTestReport {
+	reports {
+		html.required = true
+		xml.required = true
+	}
+	afterEvaluate {
+		excludedClassFilesForReport(classDirectories)
+	}
+}
+
+jacocoTestCoverageVerification {
+	afterEvaluate {
+		excludedClassFilesForReport(classDirectories)
+	}
+
+	violationRules {
+		rule {
+			limit {
+				counter = 'INSTRUCTION'
+				value = 'COVEREDRATIO'
+				minimum = 0.10
+			}
+		}
+	}
+}
+
+private excludedClassFilesForReport(classDirectories) {
+	classDirectories.setFrom(files(classDirectories.files.collect {
+		fileTree(dir: it,
+				exclude: jacocoExcludes
+		)
+	}))
+}
+
+jacoco {
+	toolVersion = "0.8.8"
+}
+
+check.dependsOn jacocoTestCoverageVerification
+jacocoTestCoverageVerification.dependsOn jacocoTestReport

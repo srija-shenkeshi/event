@@ -9,7 +9,7 @@
     ```shell
     docker compose --project-name dependencies up
     ```
-   mongo-express will be available at <http://localhost:8881> <br />
+   mongo-express will be available at <http://localhost:8081> <br />
   
 This Repository has five REST endpoints. To create, get, edit and delete the events in a calendar.
 
