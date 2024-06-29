@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -48,7 +49,7 @@ class EventControllerTest {
     void setup() throws JsonProcessingException {
         createEventRequest = CreateEventRequest.builder()
                 .eventName("BIRTHDAY")
-                .eventDate("2024-05-17")
+                .eventDate(LocalDate.now().toString())
                 .description("Vishal's Birthday")
                 .location("Bangalore")
                 .build();
