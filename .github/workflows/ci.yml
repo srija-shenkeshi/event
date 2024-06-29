@@ -8,6 +8,10 @@ on:
 
 jobs:
   ci:
+
+    permissions:
+      packages: write
+
     name: "🛠️"
     uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
     with:
