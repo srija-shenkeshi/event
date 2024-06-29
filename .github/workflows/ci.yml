@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: docker.io
-  USERNAME: srijashenkeshi5
+  REGISTRY1: docker.io
+  USERNAME1: srijashenkeshi5
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
@@ -21,8 +21,8 @@ jobs:
     name: "🛠️"
     uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
     with:
-      registry: ${{ env.REGISTRY }}
-      username: ${{ env.USERNAME }}
+      REGISTRY: ${{ env.REGISTRY1 }}
+      USERNAME: ${{ env.USERNAME1 }}
     secrets:
       REGISTRY_TOKEN: ${{ env.DOCKER_TOKEN}}
 
