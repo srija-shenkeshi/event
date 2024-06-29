@@ -2,9 +2,15 @@ name: build and push docker image to container registry
 
 on:
   push:
-    branch: [main]
+    branches: [main]
 
   workflow_dispatch:
+
+env:
+  REGISTRY: docker.io
+  USERNAME: srijashenkeshi5
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
   ci:
@@ -15,9 +21,9 @@ jobs:
     name: "🛠️"
     uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
     with:
-      REGISTRY: ghcr.io
-      USERNAME: srija-shenkeshi
+      REGISTRY: ${{ env.REGISTRY }}
+      USERNAME: ${{ env.USERNAME }}
     secrets:
-      REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+      REGISTRY_TOKEN: ${{ env.DOCKER_TOKEN}}
 
 
