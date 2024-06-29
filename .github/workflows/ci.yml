@@ -21,8 +21,8 @@ jobs:
     name: "🛠️"
     uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
     with:
-      REGISTRY: ${{ env.REGISTRY }}
-      USERNAME: ${{ env.USERNAME }}
+      registry: ${{ env.REGISTRY }}
+      username: ${{ env.USERNAME }}
     secrets:
       REGISTRY_TOKEN: ${{ env.DOCKER_TOKEN}}
 
