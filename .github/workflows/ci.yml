@@ -6,14 +6,14 @@ on:
 
   workflow_dispatch:
 
-  jobs:
-    ci:
-      name: "🛠️"
-      uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
-      with:
-        REGISTRY: ghcr.io
-        USERNAME: srija-shenkeshi
-      secrets:
-        REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+jobs:
+  ci:
+    name: "🛠️"
+    uses: srija-shenkeshi/workflows/.github/workflows/build-gradle.yml@main
+    with:
+      REGISTRY: ghcr.io
+      USERNAME: srija-shenkeshi
+    secrets:
+      REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 
 
