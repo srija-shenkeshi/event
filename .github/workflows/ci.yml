@@ -19,5 +19,13 @@ jobs:
       USERNAME: srijashenkeshi5
     secrets:
       REGISTRY_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+  cd:
 
+    name: deploy
+    uses: srija-shenkeshi/workflows/.github/workflows/deploy-gke.yml@main
+      with:
+        creds: ${{ secrets.GCP_CREDENTIALS }}
+      
+  
 
